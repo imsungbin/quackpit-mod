@@ -1,0 +1,19 @@
+{
+  "name": "quackpit",
+  "owner": {
+    "name": "SeongBeen Im"
+  },
+  "metadata": {
+    "description": "quackpit: a cockpit above your Claude Code prompt. The duck reads the gauges."
+  },
+  "plugins": [
+    {
+      "name": "quackpit",
+      "source": "./",
+      "description": "Task progress and how long the work will take, pace, context, plan limits, checks and cost as one instrument panel above the prompt, with a rubber duck as Master Caution. Zero model tokens by default, no network, no processes.",
+      "version": "0.1.0",
+      "category": "productivity",
+      "keywords": ["claude-code-mod", "dashboard", "cockpit", "gauges", "usage", "handover"]
+    }
+  ]
+}

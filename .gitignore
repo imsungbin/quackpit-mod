@@ -1,0 +1,17 @@
+# Laid by Claude Code when it loads the mod from this folder (or copied by hand
+# for `tsc -p .`): this build's API declarations, ~800 KiB, regenerated per release.
+.claude-plugin/types/
+
+# Claude Code's own per-project folder (settings, and the handover quackpit writes).
+.claude/
+
+# Dev tooling only; the mod itself has no dependencies.
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lockb
+bun.lock
+
+.DS_Store
+*.log

@@ -1,0 +1,59 @@
+{
+  "name": "quackpit",
+  "version": "0.1.0",
+  "description": "A cockpit above your Claude Code prompt. The duck reads the gauges: task progress and how long the work will take, pace, context, plan limits, checks and cost in one instrument panel, with a rubber duck as Master Caution. Zero model tokens by default, no network, no processes, nothing added to context.",
+  "author": {
+    "name": "SeongBeen Im"
+  },
+  "homepage": "https://github.com/imsungbin/quackpit-mod",
+  "repository": "https://github.com/imsungbin/quackpit-mod",
+  "license": "MIT",
+  "keywords": ["claude-code-mod", "dashboard", "cockpit", "gauges", "usage", "context", "handover"],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "tiles": {
+      "type": "string",
+      "title": "Tiles",
+      "description": "The band's gauges, in order, comma-separated. Default set: progress, pace, context, limits, checks, cost. Optional: agents, files, session, health. /quackpit add, remove and move override this for every session until you change it here.",
+      "default": "progress,pace,context,limits,checks,cost"
+    },
+    "rows": {
+      "type": "number",
+      "title": "Band rows",
+      "description": "How many rows the band above the prompt may take, 1 to 4. 1 draws one dense row; so does any terminal under 80 columns.",
+      "default": 2
+    },
+    "duck": {
+      "type": "boolean",
+      "title": "Duck",
+      "description": "The rubber duck in the Master Caution slot. It stays still until something needs attention.",
+      "default": true
+    },
+    "sound": {
+      "type": "boolean",
+      "title": "Quack sound",
+      "description": "Quack out loud when the duck raises its head (macOS plays it; other systems stay quiet).",
+      "default": false
+    },
+    "graphics": {
+      "type": "string",
+      "title": "Graphics",
+      "description": "auto draws pixel gauges where the terminal shows images (kitty, Ghostty) and designed text elsewhere; pixels or text forces one.",
+      "default": "auto",
+      "options": ["auto", "pixels", "text"]
+    },
+    "locale": {
+      "type": "string",
+      "title": "Language",
+      "description": "Language of the band, pane, toasts, notifications, guide and handover: English, Korean, Japanese, Simplified or Traditional Chinese. auto follows your system locale (ja, zh-CN and zh-SG, zh-TW, zh-HK and zh-MO; anything else English).",
+      "default": "auto",
+      "options": ["auto", "en", "ko", "ja", "zh-Hans", "zh-Hant"]
+    },
+    "aiEta": {
+      "type": "boolean",
+      "title": "AI ETA",
+      "description": "Off by default. Once a turn has worked a minute with nothing measured, ask Claude Haiku how long is left (~8m left (AI)), and again when the turn outruns its answer or the work changes: 4 calls a turn at most. It is sent the prompt (secrets masked), Claude's words, the task list, your usual turn lengths and its earlier answers. Its tokens and accuracy are shown in the pane; /quackpit ai on|off changes this.",
+      "default": false
+    }
+  }
+}

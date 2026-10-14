@@ -1,0 +1,14 @@
+{
+  "name": "quackpit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A cockpit above your Claude Code prompt. The duck reads the gauges.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "validate": "claude plugin validate .",
+    "typecheck": "npx -y -p typescript@5.9.3 tsc -p .",
+    "test": "claude plugin test .",
+    "check": "pnpm validate && pnpm typecheck && pnpm test"
+  }
+}
